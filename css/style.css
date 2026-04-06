@@ -69,19 +69,42 @@
 .navbar-light .navbar-nav .nav-link.active {
     color: var(--primary);
 }
+/* ==================== NAVBAR ==================== */
+.navbar-light .navbar-nav .nav-link {
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--dark);
+    padding: 10px 14px !important;   /* jarak antar menu */
+    margin: 0 !important;
+    transition: all 0.3s ease;
+}
 
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+/* Desktop (lg ke atas) - agak lebih longgar */
 @media (min-width: 992px) {
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 17px;
+        padding: 25px 12px !important;
+        margin-left: 6px;
+    }
+    
+    /* efek underline hover */
     .navbar-light .navbar-nav .nav-link::before {
         position: absolute;
         content: "";
         width: 0;
-        height: 5px;
+        height: 4px;
         bottom: 0;
         left: 50%;
         background: var(--primary);
-        transition: .5s;
+        transition: .4s;
     }
-
+    
     .navbar-light .navbar-nav .nav-link:hover::before,
     .navbar-light .navbar-nav .nav-link.active::before {
         width: 100%;
@@ -89,13 +112,27 @@
     }
 }
 
+/* Mobile & Tablet - lebih kecil & rapat */
 @media (max-width: 991.98px) {
-    .navbar-light .navbar-nav .nav-link  {
+    .navbar {
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+    }
+    
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 15.5px;
+        padding: 12px 20px !important;   /* rapat tapi nyaman disentuh */
         margin-left: 0;
-        padding: 100px 0;
+    }
+    
+    .navbar-brand h1 {
+        font-size: 1.35rem;   /* logo sedikit lebih kecil di HP */
+    }
+    
+    .dropdown-menu {
+        padding: 6px 0;
     }
 }
-
 .hero-header {
     background: url(../img/homesman48jkt.jpg) center center no-repeat;
     background-size: cover;
